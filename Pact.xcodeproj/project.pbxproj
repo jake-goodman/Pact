@@ -8,11 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		0345ECD6207DB6D9EA759B49 /* Pods_PactUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF4E911D7126A67908D2E4F /* Pods_PactUITests.framework */; };
+		236598A020BE74EE003746C4 /* ActivityTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365989F20BE74EE003746C4 /* ActivityTableHeaderView.swift */; };
+		236598A220BE751A003746C4 /* ActivityTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236598A120BE751A003746C4 /* ActivityTableHeaderView.xib */; };
 		2388D86F20BE490A00E97807 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2388D86E20BE490A00E97807 /* GoogleService-Info.plist */; };
 		2388D87220BE4CE500E97807 /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388D87120BE4CE500E97807 /* Participant.swift */; };
 		2388D87420BE50B400E97807 /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388D87320BE50B400E97807 /* AppUtility.swift */; };
 		2388D87820BE524600E97807 /* PactTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388D87620BE524600E97807 /* PactTabBarController.swift */; };
 		2388D87920BE524600E97807 /* PactTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2388D87720BE524600E97807 /* PactTabBarController.xib */; };
+		2388D87E20BE69B000E97807 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388D87C20BE69B000E97807 /* EventsViewController.swift */; };
+		2388D87F20BE69B000E97807 /* EventsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2388D87D20BE69B000E97807 /* EventsViewController.xib */; };
+		2388D88220BE6A7400E97807 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388D88020BE6A7400E97807 /* GroupsViewController.swift */; };
+		2388D88320BE6A7400E97807 /* GroupsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2388D88120BE6A7400E97807 /* GroupsViewController.xib */; };
+		2388D88620BE6BE900E97807 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388D88420BE6BE900E97807 /* ActivityViewController.swift */; };
+		2388D88720BE6BE900E97807 /* ActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2388D88520BE6BE900E97807 /* ActivityViewController.xib */; };
+		2388D88A20BE6E7F00E97807 /* ActivityLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388D88820BE6E7F00E97807 /* ActivityLogCell.swift */; };
+		2388D88B20BE6E7F00E97807 /* ActivityLogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2388D88920BE6E7F00E97807 /* ActivityLogCell.xib */; };
+		2388D88D20BE705000E97807 /* ActivityLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388D88C20BE705000E97807 /* ActivityLog.swift */; };
 		2389F17020BD19E900BA14B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2389F16F20BD19E900BA14B6 /* AppDelegate.swift */; };
 		2389F17220BD19E900BA14B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2389F17120BD19E900BA14B6 /* ViewController.swift */; };
 		2389F17720BD19EA00BA14B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2389F17620BD19EA00BA14B6 /* Assets.xcassets */; };
@@ -46,11 +57,22 @@
 /* Begin PBXFileReference section */
 		1CF4E911D7126A67908D2E4F /* Pods_PactUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PactUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED3BD01CDF42CA64B6EAC30 /* Pods-PactTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PactTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PactTests/Pods-PactTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2365989F20BE74EE003746C4 /* ActivityTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableHeaderView.swift; sourceTree = "<group>"; };
+		236598A120BE751A003746C4 /* ActivityTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTableHeaderView.xib; sourceTree = "<group>"; };
 		2388D86E20BE490A00E97807 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2388D87120BE4CE500E97807 /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
 		2388D87320BE50B400E97807 /* AppUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtility.swift; sourceTree = "<group>"; };
 		2388D87620BE524600E97807 /* PactTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PactTabBarController.swift; sourceTree = "<group>"; };
 		2388D87720BE524600E97807 /* PactTabBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PactTabBarController.xib; sourceTree = "<group>"; };
+		2388D87C20BE69B000E97807 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		2388D87D20BE69B000E97807 /* EventsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsViewController.xib; sourceTree = "<group>"; };
+		2388D88020BE6A7400E97807 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		2388D88120BE6A7400E97807 /* GroupsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupsViewController.xib; sourceTree = "<group>"; };
+		2388D88420BE6BE900E97807 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		2388D88520BE6BE900E97807 /* ActivityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityViewController.xib; sourceTree = "<group>"; };
+		2388D88820BE6E7F00E97807 /* ActivityLogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLogCell.swift; sourceTree = "<group>"; };
+		2388D88920BE6E7F00E97807 /* ActivityLogCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityLogCell.xib; sourceTree = "<group>"; };
+		2388D88C20BE705000E97807 /* ActivityLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLog.swift; sourceTree = "<group>"; };
 		2389F16C20BD19E900BA14B6 /* Pact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2389F16F20BD19E900BA14B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2389F17120BD19E900BA14B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +128,9 @@
 		2388D87020BE4CCA00E97807 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2389F1A320BD2DD400BA14B6 /* APIController.swift */,
 				2388D87120BE4CE500E97807 /* Participant.swift */,
+				2388D88C20BE705000E97807 /* ActivityLog.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -118,6 +142,16 @@
 				2389F19E20BD1BE600BA14B6 /* OnboardingViewController.xib */,
 				2388D87620BE524600E97807 /* PactTabBarController.swift */,
 				2388D87720BE524600E97807 /* PactTabBarController.xib */,
+				2388D87C20BE69B000E97807 /* EventsViewController.swift */,
+				2388D87D20BE69B000E97807 /* EventsViewController.xib */,
+				2388D88020BE6A7400E97807 /* GroupsViewController.swift */,
+				2388D88120BE6A7400E97807 /* GroupsViewController.xib */,
+				2388D88420BE6BE900E97807 /* ActivityViewController.swift */,
+				2388D88520BE6BE900E97807 /* ActivityViewController.xib */,
+				2388D88820BE6E7F00E97807 /* ActivityLogCell.swift */,
+				2388D88920BE6E7F00E97807 /* ActivityLogCell.xib */,
+				2365989F20BE74EE003746C4 /* ActivityTableHeaderView.swift */,
+				236598A120BE751A003746C4 /* ActivityTableHeaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -155,7 +189,6 @@
 				2389F17620BD19EA00BA14B6 /* Assets.xcassets */,
 				2389F17820BD19EA00BA14B6 /* LaunchScreen.storyboard */,
 				2389F17B20BD19EA00BA14B6 /* Info.plist */,
-				2389F1A320BD2DD400BA14B6 /* APIController.swift */,
 				2388D87320BE50B400E97807 /* AppUtility.swift */,
 			);
 			path = Pact;
@@ -316,10 +349,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2389F17A20BD19EA00BA14B6 /* LaunchScreen.storyboard in Resources */,
+				2388D87F20BE69B000E97807 /* EventsViewController.xib in Resources */,
 				2389F17720BD19EA00BA14B6 /* Assets.xcassets in Resources */,
 				2389F1A020BD1BE600BA14B6 /* OnboardingViewController.xib in Resources */,
+				2388D88320BE6A7400E97807 /* GroupsViewController.xib in Resources */,
+				2388D88B20BE6E7F00E97807 /* ActivityLogCell.xib in Resources */,
 				2388D87920BE524600E97807 /* PactTabBarController.xib in Resources */,
+				236598A220BE751A003746C4 /* ActivityTableHeaderView.xib in Resources */,
 				2388D86F20BE490A00E97807 /* GoogleService-Info.plist in Resources */,
+				2388D88720BE6BE900E97807 /* ActivityViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,13 +550,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2388D88A20BE6E7F00E97807 /* ActivityLogCell.swift in Sources */,
+				236598A020BE74EE003746C4 /* ActivityTableHeaderView.swift in Sources */,
 				2389F1A420BD2DD400BA14B6 /* APIController.swift in Sources */,
+				2388D87E20BE69B000E97807 /* EventsViewController.swift in Sources */,
 				2389F17220BD19E900BA14B6 /* ViewController.swift in Sources */,
+				2388D88620BE6BE900E97807 /* ActivityViewController.swift in Sources */,
 				2388D87820BE524600E97807 /* PactTabBarController.swift in Sources */,
 				2388D87420BE50B400E97807 /* AppUtility.swift in Sources */,
 				2388D87220BE4CE500E97807 /* Participant.swift in Sources */,
 				2389F19F20BD1BE600BA14B6 /* OnboardingViewController.swift in Sources */,
 				2389F17020BD19E900BA14B6 /* AppDelegate.swift in Sources */,
+				2388D88220BE6A7400E97807 /* GroupsViewController.swift in Sources */,
+				2388D88D20BE705000E97807 /* ActivityLog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,20 @@ class PactTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let firstViewController = UINavigationController(rootViewController: EventsViewController())
+        firstViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
+        
+        let secondViewController =  UINavigationController(rootViewController: ActivityViewController())
+        firstViewController.navigationItem.title = "Your Activity"
+        secondViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
+        
+        let thirdViewController =  UINavigationController(rootViewController: GroupsViewController())
+        thirdViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 2)
+        
+        let tabBarList = [firstViewController, secondViewController, thirdViewController]
+        
+        viewControllers = tabBarList
         // Do any additional setup after loading the view.
     }
 

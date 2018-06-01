@@ -13,7 +13,7 @@ struct MappingError: Error {
 class Participant {
     var id: String
     var name: String
-    var logs: [ParticipationLog] = []
+    var logs: [ActivityLog] = []
     
     init(id: String, name: String) {
         self.id = id
@@ -34,14 +34,3 @@ class Participant {
     }
 }
 
-class ParticipationLog {
-    var id: String = ""
-    var description: String = ""
-    var numHours: Float = 0
-    
-}
-
-class Event {
-    var id: String = ""
-    var name: String = ""
-}

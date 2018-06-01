@@ -27,10 +27,24 @@ class OnboardingViewController: UIViewController {
     
     fileprivate var state: ScreenState = .landing
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        updateState(.landing)
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if let currentUser = APIController.shared.currentUser {
+            updateState(.loading)
+            APIController.shared.retrieveParticipant(forUser: currentUser.uid) { (participant, error) in
+                if let participant = participant {
+                    APIController.shared.currentParticipant = participant
+                    self.segueToDashboard()
+                } else {
+                    self.updateState(.landing)
+                }
+            }
+        } else {
+            updateState(.landing)
+        }
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -100,7 +114,7 @@ class OnboardingViewController: UIViewController {
                 }
                 else if let user = user {
                     APIController.shared.retrieveParticipant(forUser: user.uid) { (participant, error) in
-                        print("Got existing participant")
+                        self.segueToDashboard()
                     }
                 }
             }
@@ -117,8 +131,7 @@ class OnboardingViewController: UIViewController {
                 }
                 else if let user = user {
                     APIController.shared.createParticipant(forUser: user.uid, withName: self.nameTextField.text!) { (participant, error) in
-                        print("Created new participant")
-
+                        self.segueToDashboard()
                     }
                 }
             }
@@ -130,6 +143,11 @@ class OnboardingViewController: UIViewController {
         nameTextField.resignFirstResponder()
         passTextField.resignFirstResponder()
         updateState(.landing)
+    }
+    
+    func segueToDashboard() {
+        let tabBarViewController = PactTabBarController()
+        self.present(tabBarViewController, animated: true, completion: nil)
     }
     
 }
