@@ -82,7 +82,7 @@ extension ActivityViewController: UITableViewDataSource, UITableViewDelegate {
             cell.textLabel?.textAlignment = .center
             cell.selectionStyle = .none
             return cell
-        }
+        } 
             
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "LogCell", for: indexPath) as? ActivityLogCell else { return UITableViewCell() }
         
