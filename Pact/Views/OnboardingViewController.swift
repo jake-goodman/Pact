@@ -146,8 +146,9 @@ class OnboardingViewController: UIViewController {
     }
     
     func segueToDashboard() {
-        let tabBarViewController = PactTabBarController()
-        self.present(tabBarViewController, animated: true, completion: nil)
+        let centralController = CentralViewController()
+//        let tabBarViewController = PactTabBarController()
+        self.present(centralController, animated: true, completion: nil)
     }
     
 }

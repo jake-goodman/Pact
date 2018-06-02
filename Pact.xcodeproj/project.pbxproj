@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0345ECD6207DB6D9EA759B49 /* Pods_PactUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF4E911D7126A67908D2E4F /* Pods_PactUITests.framework */; };
+		23179F2020C32D9100A26A75 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23179F1F20C32D9100A26A75 /* UIView+Extensions.swift */; };
+		23179F2220C331A900A26A75 /* Float+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23179F2120C331A900A26A75 /* Float+Extensions.swift */; };
+		23179F2520C333BC00A26A75 /* CentralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23179F2320C333BC00A26A75 /* CentralViewController.swift */; };
+		23179F2620C333BC00A26A75 /* CentralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23179F2420C333BC00A26A75 /* CentralViewController.xib */; };
 		236598A020BE74EE003746C4 /* ActivityTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365989F20BE74EE003746C4 /* ActivityTableHeaderView.swift */; };
 		236598A220BE751A003746C4 /* ActivityTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236598A120BE751A003746C4 /* ActivityTableHeaderView.xib */; };
 		2388D86F20BE490A00E97807 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2388D86E20BE490A00E97807 /* GoogleService-Info.plist */; };
@@ -33,6 +37,9 @@
 		2389F19F20BD1BE600BA14B6 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2389F19D20BD1BE600BA14B6 /* OnboardingViewController.swift */; };
 		2389F1A020BD1BE600BA14B6 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2389F19E20BD1BE600BA14B6 /* OnboardingViewController.xib */; };
 		2389F1A420BD2DD400BA14B6 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2389F1A320BD2DD400BA14B6 /* APIController.swift */; };
+		23AED7A320C0FAF1006E9BC3 /* AddLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AED7A120C0FAF1006E9BC3 /* AddLogViewController.swift */; };
+		23AED7A420C0FAF1006E9BC3 /* AddLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23AED7A220C0FAF1006E9BC3 /* AddLogViewController.xib */; };
+		23AED7A720C10529006E9BC3 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AED7A620C10529006E9BC3 /* UIColor+Extensions.swift */; };
 		2B438BC8746CD7DA79B7AEAE /* Pods_Pact.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA5AEE93E2AD841B14FA43E /* Pods_Pact.framework */; };
 		3C89026AE3C9496FF5CB594F /* Pods_PactTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F7444F8960783D6DB2D52C /* Pods_PactTests.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +64,10 @@
 /* Begin PBXFileReference section */
 		1CF4E911D7126A67908D2E4F /* Pods_PactUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PactUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED3BD01CDF42CA64B6EAC30 /* Pods-PactTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PactTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PactTests/Pods-PactTests.debug.xcconfig"; sourceTree = "<group>"; };
+		23179F1F20C32D9100A26A75 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		23179F2120C331A900A26A75 /* Float+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Extensions.swift"; sourceTree = "<group>"; };
+		23179F2320C333BC00A26A75 /* CentralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralViewController.swift; sourceTree = "<group>"; };
+		23179F2420C333BC00A26A75 /* CentralViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CentralViewController.xib; sourceTree = "<group>"; };
 		2365989F20BE74EE003746C4 /* ActivityTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableHeaderView.swift; sourceTree = "<group>"; };
 		236598A120BE751A003746C4 /* ActivityTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTableHeaderView.xib; sourceTree = "<group>"; };
 		2388D86E20BE490A00E97807 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -88,6 +99,9 @@
 		2389F19D20BD1BE600BA14B6 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		2389F19E20BD1BE600BA14B6 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		2389F1A320BD2DD400BA14B6 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		23AED7A120C0FAF1006E9BC3 /* AddLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLogViewController.swift; sourceTree = "<group>"; };
+		23AED7A220C0FAF1006E9BC3 /* AddLogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddLogViewController.xib; sourceTree = "<group>"; };
+		23AED7A620C10529006E9BC3 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		28C5528353D74D2C13F1AEF8 /* Pods-PactUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PactUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PactUITests/Pods-PactUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8DA5AEE93E2AD841B14FA43E /* Pods_Pact.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pact.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E0F585F64B22262A9AC917A /* Pods-PactTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PactTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PactTests/Pods-PactTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +166,11 @@
 				2388D88920BE6E7F00E97807 /* ActivityLogCell.xib */,
 				2365989F20BE74EE003746C4 /* ActivityTableHeaderView.swift */,
 				236598A120BE751A003746C4 /* ActivityTableHeaderView.xib */,
+				23AED7A120C0FAF1006E9BC3 /* AddLogViewController.swift */,
+				23AED7A220C0FAF1006E9BC3 /* AddLogViewController.xib */,
+				23179F2320C333BC00A26A75 /* CentralViewController.swift */,
+				23179F2420C333BC00A26A75 /* CentralViewController.xib */,
+				23AED7A520C1051E006E9BC3 /* Extensions */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,6 +229,16 @@
 				2389F19120BD19EB00BA14B6 /* Info.plist */,
 			);
 			path = PactUITests;
+			sourceTree = "<group>";
+		};
+		23AED7A520C1051E006E9BC3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				23AED7A620C10529006E9BC3 /* UIColor+Extensions.swift */,
+				23179F1F20C32D9100A26A75 /* UIView+Extensions.swift */,
+				23179F2120C331A900A26A75 /* Float+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		2DEEAB1D033525589A54C832 /* Frameworks */ = {
@@ -349,10 +378,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2389F17A20BD19EA00BA14B6 /* LaunchScreen.storyboard in Resources */,
+				23AED7A420C0FAF1006E9BC3 /* AddLogViewController.xib in Resources */,
 				2388D87F20BE69B000E97807 /* EventsViewController.xib in Resources */,
 				2389F17720BD19EA00BA14B6 /* Assets.xcassets in Resources */,
 				2389F1A020BD1BE600BA14B6 /* OnboardingViewController.xib in Resources */,
 				2388D88320BE6A7400E97807 /* GroupsViewController.xib in Resources */,
+				23179F2620C333BC00A26A75 /* CentralViewController.xib in Resources */,
 				2388D88B20BE6E7F00E97807 /* ActivityLogCell.xib in Resources */,
 				2388D87920BE524600E97807 /* PactTabBarController.xib in Resources */,
 				236598A220BE751A003746C4 /* ActivityTableHeaderView.xib in Resources */,
@@ -551,10 +582,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2388D88A20BE6E7F00E97807 /* ActivityLogCell.swift in Sources */,
+				23179F2220C331A900A26A75 /* Float+Extensions.swift in Sources */,
 				236598A020BE74EE003746C4 /* ActivityTableHeaderView.swift in Sources */,
 				2389F1A420BD2DD400BA14B6 /* APIController.swift in Sources */,
 				2388D87E20BE69B000E97807 /* EventsViewController.swift in Sources */,
+				23AED7A720C10529006E9BC3 /* UIColor+Extensions.swift in Sources */,
 				2389F17220BD19E900BA14B6 /* ViewController.swift in Sources */,
+				23179F2020C32D9100A26A75 /* UIView+Extensions.swift in Sources */,
+				23AED7A320C0FAF1006E9BC3 /* AddLogViewController.swift in Sources */,
 				2388D88620BE6BE900E97807 /* ActivityViewController.swift in Sources */,
 				2388D87820BE524600E97807 /* PactTabBarController.swift in Sources */,
 				2388D87420BE50B400E97807 /* AppUtility.swift in Sources */,
@@ -562,6 +597,7 @@
 				2389F19F20BD1BE600BA14B6 /* OnboardingViewController.swift in Sources */,
 				2389F17020BD19E900BA14B6 /* AppDelegate.swift in Sources */,
 				2388D88220BE6A7400E97807 /* GroupsViewController.swift in Sources */,
+				23179F2520C333BC00A26A75 /* CentralViewController.swift in Sources */,
 				2388D88D20BE705000E97807 /* ActivityLog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

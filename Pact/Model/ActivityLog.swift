@@ -19,6 +19,15 @@ class ActivityLog {
         self.description = description
     }
     
+    init(json: [String: Any]) throws {
+        guard let id = json["id"] as? String, let numHours = json["numHours"] as? Float, let description = json["description"] as? String else {
+            throw MappingError()
+        }
+        self.id = id
+        self.numHours = numHours
+        self.description = description
+    }
+    
     func toJSON() -> [String: Any] {
         return ["id": id,
                 "numHours": numHours,

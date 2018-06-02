@@ -26,6 +26,7 @@ class PactTabBarController: UITabBarController {
         let tabBarList = [firstViewController, secondViewController, thirdViewController]
         
         viewControllers = tabBarList
+        selectedIndex = 1
         // Do any additional setup after loading the view.
     }
 

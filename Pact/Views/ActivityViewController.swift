@@ -16,6 +16,7 @@ class ActivityViewController: UIViewController {
     var logs: [ActivityLog] = []
     
     override func viewDidLoad() {
+        guard let participant = APIController.shared.currentParticipant else { return }
         super.viewDidLoad()
         title = "Your Activity"
         
@@ -26,19 +27,29 @@ class ActivityViewController: UIViewController {
         let rightButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addLog))
         self.navigationItem.rightBarButtonItem = rightButton
         
+        
         activityIndicator.startAnimating()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        APIController.shared.retrieveActivityLogs(forUser: participant.id) { (logs, error) in
             self.activityIndicator.stopAnimating()
-            self.tableView.delegate = self
-            self.tableView.dataSource = self
-            self.tableView.reloadData()
+            if let error = error {
+                
+            }
+            else {
+                self.logs = logs
+                self.tableView.delegate = self
+                self.tableView.dataSource = self
+                self.tableView.reloadData()
+            }
         }
     }
     
     @objc func addLog() {
-        let log = ActivityLog(id: "a", numHours: 2, description: "Logged 2 hours.")
-        logs.append(log)
-        tableView.reloadData()
+        let addLogViewController = AddLogViewController()
+        addLogViewController.delegate = self
+        addLogViewController.modalPresentationStyle = .overCurrentContext
+        addLogViewController.modalTransitionStyle = .crossDissolve
+        self.definesPresentationContext = true
+        self.tabBarController?.present(addLogViewController, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,6 +57,15 @@ class ActivityViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+}
+
+extension ActivityViewController: AddLogViewControllerDelegate {
+    func addLogViewController(_ viewController: AddLogViewController, didSubmit log: ActivityLog) {
+        self.logs.append(log)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
 }
 
 extension ActivityViewController: UITableViewDataSource, UITableViewDelegate {
@@ -58,22 +78,26 @@ extension ActivityViewController: UITableViewDataSource, UITableViewDelegate {
         return max(logs.count, 1)
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 180
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderView") as? ActivityTableHeaderView else {
-            return nil
-        }
-        return headerView
-    }
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 180
+//    }
+//
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderView") as? ActivityTableHeaderView else {
+//            return nil
+//        }
+//        return headerView
+//    }
     
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        if let headerView = view as? ActivityTableHeaderView {
-            headerView.setupUI()
-        }
-    }
+//    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+//        if let headerView = view as? ActivityTableHeaderView {
+//            headerView.setupUI()
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if logs.count == 0 {
@@ -87,9 +111,17 @@ extension ActivityViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "LogCell", for: indexPath) as? ActivityLogCell else { return UITableViewCell() }
         
         let log = logs[indexPath.row]
-        cell.hourLabel.text = "\(log.numHours)h"
+        let numHoursString = log.numHours.isInteger ? "\(log.numHours.asInteger())h" : "\(log.numHours)h"
+        
+        cell.hourLabel.text = numHoursString
         cell.descriptionLabel.text = log.description
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cell = cell as? ActivityLogCell else { return }
+        cell.layoutIfNeeded()
+        cell.hourLabel.displayAsCircle()
     }
     
 }

@@ -77,7 +77,7 @@ class APIController {
         docRef.getDocument { (document, error) in
             if let document = document, document.exists,
                 let docData = document.data(),
-                let participant = try? Participant(json: docData){
+                let participant = try? Participant(json: docData) {
                 completion(participant, nil)
             } else {
                 completion(nil, error)
@@ -97,6 +97,23 @@ class APIController {
                 } else {
                     completion(log, nil)
                 }
+            }
+        }
+    }
+    
+    func retrieveActivityLogs(forUser userId: String, completion: @escaping ([ActivityLog], Error?)->Void) {
+        let collectionRef = db.collection(FirestoreKeys.participant).document(userId).collection(FirestoreKeys.entries)
+        collectionRef.getDocuments() { (snapshot, error) in
+            var logs: [ActivityLog] = []
+            if let documents = snapshot?.documents.filter({$0.exists}) {
+                for document in documents {
+                    if let log = try? ActivityLog(json: document.data()) {
+                        logs.append(log)
+                    }
+                }
+            }
+            DispatchQueue.main.async {
+                completion(logs, error)
             }
         }
     }
