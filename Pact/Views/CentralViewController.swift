@@ -20,6 +20,7 @@ class CentralViewController: UIViewController {
         super.viewDidLoad()
         setupContainerView()
         progressView.displayAsCircle()
+        progressView.showBorder(width: 4, color: UIColor.pactBlueDark.cgColor)
         // Do any additional setup after loading the view.
     }
 
@@ -45,10 +46,9 @@ class CentralViewController: UIViewController {
     }
     
     @IBAction func didTapNavigationButton(_ sender: Any) {
-        guard let button = sender as? UIButton else { return }
-        if let index = self.navigationButtons.index(of: button) {
+        if let button = sender as? UIButton,
+            let index = self.navigationButtons.index(of: button) {
             navigationTabBarController.selectedIndex = index
         }
     }
-
 }

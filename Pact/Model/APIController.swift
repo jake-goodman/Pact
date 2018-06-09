@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseStorage
 
 typealias AuthCallback = (User?, Error?)->Void
 
@@ -31,7 +32,7 @@ class APIController {
     
     fileprivate let auth = Auth.auth()
     fileprivate let db = Firestore.firestore()
-    
+    fileprivate let storage = Storage.storage().reference()
     
     private init() {
         let settings = db.settings
@@ -85,9 +86,32 @@ class APIController {
         }
     }
     
+    func uploadProfileImage(url: URL, for particpant: Participant) {
+        let profileStorageRef = storage.child("participants").child(particpant.id)
+        do {
+            let imageData = try Data(contentsOf: url)
+            if let image = UIImage(data: imageData){
+                let compressedImage = image.compressed()
+                if let compressedData = UIImageJPEGRepresentation(compressedImage, 1.0){
+                    let uploadTask = profileStorageRef.putData(compressedData, metadata: nil) { (metadata, error) in
+                        DispatchQueue.main.async {
+                           print("Uploaded")
+                        }
+                    }
+                }
+            }
+        }
+        catch {
+            DispatchQueue.main.async {
+                print("Failed")
+
+            }
+        }
+    }
+
     // MARK: - Logs
     
-    func createActivityLog(forUser userId: String, numHours: Float, description: String, completion: @escaping (ActivityLog?, Error?)->Void) {
+    func createActivityLog(forUser userId: String, numHours: Float, description: String, date: Date?, completion: @escaping (ActivityLog?, Error?)->Void) {
         let doc = db.collection(FirestoreKeys.participant).document(userId).collection(FirestoreKeys.entries).document()
         let log = ActivityLog(id: doc.documentID, numHours: numHours, description: description)
         doc.setData(log.toJSON()) { (error) in

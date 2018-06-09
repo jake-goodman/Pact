@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddLogViewController" customModule="Pact" customModuleProvider="target">
             <connections>
+                <outlet property="contentView" destination="COE-Fw-dlo" id="MWd-KR-0nI"/>
+                <outlet property="dateButton" destination="JUA-w4-Raw" id="X7r-R5-Nt8"/>
                 <outlet property="submitButton" destination="5li-LW-6qj" id="ESQ-Kz-Qze"/>
                 <outlet property="timeLabel" destination="b3h-m8-Zuk" id="kdk-Nx-vlN"/>
                 <outlet property="timeSlider" destination="MCG-bU-o1d" id="5K4-xp-3p0"/>
@@ -25,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COE-Fw-dlo">
-                    <rect key="frame" x="40" y="120" width="295" height="318"/>
+                    <rect key="frame" x="40" y="120" width="295" height="350"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJg-kh-5oV">
                             <rect key="frame" x="108" y="12" width="79" height="21"/>
@@ -40,13 +42,13 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="MCG-bU-o1d">
-                            <rect key="frame" x="22" y="154" width="251" height="31"/>
+                            <rect key="frame" x="22" y="144" width="251" height="31"/>
                             <connections>
                                 <action selector="didSlideTimeSlider:" destination="-1" eventType="valueChanged" id="RTd-6B-f5s"/>
                             </connections>
                         </slider>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5li-LW-6qj">
-                            <rect key="frame" x="0.0" y="268" width="295" height="50"/>
+                            <rect key="frame" x="0.0" y="300" width="295" height="50"/>
                             <color key="backgroundColor" red="0.0" green="0.3294117647" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="2dG-u4-xSY"/>
@@ -69,7 +71,7 @@
                             </constraints>
                         </view>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vRk-b0-TNQ">
-                            <rect key="frame" x="25" y="204" width="245" height="29"/>
+                            <rect key="frame" x="25" y="236" width="245" height="29"/>
                             <segments>
                                 <segment title="Activity"/>
                                 <segment title="Donation"/>
@@ -84,25 +86,35 @@
                                 <action selector="didTapCancel:" destination="-1" eventType="touchUpInside" id="p79-ci-Xof"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUA-w4-Raw">
+                            <rect key="frame" x="25" y="194" width="245" height="30"/>
+                            <state key="normal" title="Date Label"/>
+                            <connections>
+                                <action selector="didTapDate:" destination="-1" eventType="touchUpInside" id="NcV-7x-tWX"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="JUA-w4-Raw" firstAttribute="leading" secondItem="COE-Fw-dlo" secondAttribute="leading" constant="25" id="1Q6-bA-fbK"/>
+                        <constraint firstItem="vRk-b0-TNQ" firstAttribute="top" secondItem="JUA-w4-Raw" secondAttribute="bottom" constant="12" id="5KY-8J-W6m"/>
                         <constraint firstItem="MJg-kh-5oV" firstAttribute="centerX" secondItem="COE-Fw-dlo" secondAttribute="centerX" id="6My-Cn-SOL"/>
                         <constraint firstAttribute="trailing" secondItem="vRk-b0-TNQ" secondAttribute="trailing" constant="25" id="76v-RR-3pB"/>
                         <constraint firstItem="IPH-dV-6at" firstAttribute="top" secondItem="MJg-kh-5oV" secondAttribute="bottom" constant="8" id="803-G2-ezN"/>
-                        <constraint firstItem="MCG-bU-o1d" firstAttribute="top" secondItem="b3h-m8-Zuk" secondAttribute="bottom" constant="18" id="BfQ-GG-Run"/>
+                        <constraint firstAttribute="trailing" secondItem="JUA-w4-Raw" secondAttribute="trailing" constant="25" id="9Cw-yz-ADE"/>
+                        <constraint firstItem="MCG-bU-o1d" firstAttribute="top" secondItem="b3h-m8-Zuk" secondAttribute="bottom" constant="8" id="BfQ-GG-Run"/>
                         <constraint firstAttribute="bottom" secondItem="5li-LW-6qj" secondAttribute="bottom" id="CvV-3K-cDf"/>
                         <constraint firstAttribute="trailing" secondItem="5li-LW-6qj" secondAttribute="trailing" id="Euh-IM-fNF"/>
                         <constraint firstItem="MCG-bU-o1d" firstAttribute="leading" secondItem="COE-Fw-dlo" secondAttribute="leading" constant="24" id="ILY-cA-J6l"/>
                         <constraint firstItem="oXP-JB-MFa" firstAttribute="leading" secondItem="COE-Fw-dlo" secondAttribute="leading" constant="12" id="NK4-Mu-IlO"/>
                         <constraint firstItem="5li-LW-6qj" firstAttribute="top" secondItem="vRk-b0-TNQ" secondAttribute="bottom" constant="36" id="Nf8-12-tlT"/>
                         <constraint firstItem="IPH-dV-6at" firstAttribute="leading" secondItem="COE-Fw-dlo" secondAttribute="leading" constant="20" id="O9P-Fz-tLd"/>
-                        <constraint firstItem="vRk-b0-TNQ" firstAttribute="top" secondItem="MCG-bU-o1d" secondAttribute="bottom" constant="20" id="Q4A-I2-ZHh"/>
                         <constraint firstAttribute="trailing" secondItem="IPH-dV-6at" secondAttribute="trailing" constant="20" id="b1B-ny-h8g"/>
                         <constraint firstItem="5li-LW-6qj" firstAttribute="leading" secondItem="COE-Fw-dlo" secondAttribute="leading" id="ez8-gu-pX6"/>
                         <constraint firstItem="MJg-kh-5oV" firstAttribute="top" secondItem="COE-Fw-dlo" secondAttribute="top" constant="12" id="hUZ-Jf-qf3"/>
                         <constraint firstItem="MJg-kh-5oV" firstAttribute="centerY" secondItem="oXP-JB-MFa" secondAttribute="centerY" id="heh-Ku-UOt"/>
                         <constraint firstAttribute="trailing" secondItem="MCG-bU-o1d" secondAttribute="trailing" constant="24" id="iDK-Lq-RLC"/>
+                        <constraint firstItem="JUA-w4-Raw" firstAttribute="top" secondItem="MCG-bU-o1d" secondAttribute="bottom" constant="20" id="mlw-Po-Eba"/>
                         <constraint firstItem="b3h-m8-Zuk" firstAttribute="centerX" secondItem="COE-Fw-dlo" secondAttribute="centerX" id="sYW-hH-nQ2"/>
                         <constraint firstItem="vRk-b0-TNQ" firstAttribute="leading" secondItem="COE-Fw-dlo" secondAttribute="leading" constant="25" id="uSW-2O-9ez"/>
                         <constraint firstItem="b3h-m8-Zuk" firstAttribute="top" secondItem="IPH-dV-6at" secondAttribute="bottom" constant="22" id="wDP-9n-e72"/>
